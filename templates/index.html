@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <div class="container-fluid">
+       {% if img is defined %}
+       <div class="container-fluid">
+           <div class="w3-card-4">
+              <img class="img-responsive" src="{{ url_for('static',filename = 'images/'+img)}}" alt="" />
+              <a class="btn btn-success btn-block" href='/predict'>Predict</a>
+           </div>
+       </div>
+       {% else %}
+        <div class="w3-card-4">
+       <span class="label label-danger">{{ message }}</span>
+        <div class="container-fluid">
+          <h2>
+              Giant volumes of Bank Check are widely used all over the world for the financial transactions,
+              especially in developing countries like Nepal. Paper check is still used for non-cash transaction
+              even after the implementation   of electronic transactions such as debit and credit card system.
+              These check are processed manually, which require extra manpower, time and cost. Our attempt is to
+              automate this process so that this labor-intensive work can be computerized which is both time and cost effective.
+              In this paper we purpose a mechanism of recognition of check fields like Payee Name, Amount, Date and Account number.
+          </h2>
+        </div>
+        </div>
+       {% endif%}
+   </div>
+
+{% endblock %}
+
+

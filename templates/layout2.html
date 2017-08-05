@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="utf-8">
+     <title>Cheque Image Recognition</title>
+     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}" />
+     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap-theme.css') }}" />
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mero.css') }}">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='w3css.css') }}">
+
+ </head>
+ <body>
+    {% include '_header2.html' %}
+    <div class="container">
+    {% block body %}
+
+    {% endblock %}
+    </div>
+    {% include '_footer.html' %}
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/jquery-3.2.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.js')}}"></script>
+ </body>
+</html>
