@@ -36,7 +36,9 @@ def detect():
                 break
         # show the contour (outline) of the piece of paper
         cv2.drawContours(image, [screenCnt], -1, (0, 255, 0), 1)
+
         warped = four_point_transform(orig, screenCnt.reshape(4, 2))
+
         cropped = cv2.resize(warped, (1500,750), interpolation=cv2.INTER_LINEAR)
         # cv2.imshow('', warped)
         # cv2.waitKey(0)

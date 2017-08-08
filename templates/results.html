@@ -1,32 +1,47 @@
 {% extends 'layout2.html' %}
 {% block body %}
-   <div class="container">
+   <div class="container-full">
        <div class="row">
-           <div class="col-md-6">
-               <div class="w3-card-4">
-                   The processed Image is :
-                 <img class="img-responsive" src="{{ url_for('static',filename = 'images/firstImage.png')}}" alt="" />
-               </div>
-               <div class="w3-card-4">
-                 <img class="img-responsive" src="{{ url_for('static',filename = 'steps/grayImage.png')}}" alt="" />
-               </div>
-               <div class="w3-card-4">
+           <table class="table table-striped table-responsive">
+               <h2 class="text-center">The recognized characters are:</h2>
+{#               1#}
+               <tr>
+                   <td>
+                        <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/1cropname.png')}}" alt="" />
+                   </td>
+                   <td>
+                        <h4>Name : {{ name }}</h4>
+                   </td>
+               </tr>
+{#               2#}
+               <tr>
+                   <td>
+                       <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/2cropdate.png')}}" alt="" />
+                   </td>
+                   <td>
+                       <h4>Date : {{ date }}</h4>
+                   </td>
+               </tr>
+{#               3#}
+               <tr>
+                   <td>
+                        <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/3cropamountW.png')}}" alt="" />
+                   </td>
+                   <td>
+                       <h4>Amount in Words : {{ amountW }}</h4>
+                   </td>
+               </tr>
+{#               4#}
+               <tr>
+                   <td>
+                        <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/4cropamountN.png')}}" alt="" />
+                   </td>
+                   <td>
+                       <h4>Amount in Numbers : {{ amountN }}</h4>
+                   </td>
+               </tr>
 
-                 <img class="img-responsive" src="{{ url_for('static',filename = 'steps/edgedImage.png')}}" alt="" />
-               </div>
-           </div>
-            <div class="col-md-6">
-                <div class="w3-card-4">
-                     <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/1cropname.png')}}" alt="" />
-                   <h4>Name : {{ name }}</h4>
-                     <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/2cropdate.png')}}" alt="" />
-                   <h4>Date : {{ date }}</h4>
-                     <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/3cropamountW.png')}}" alt="" />
-                   <h4>Amount in Words : {{ amountW }}</h4>
-                     <img class="img-responsive" src="{{ url_for('static',filename = 'croppedW/4cropamountN.png')}}" alt="" />
-                   <h4>Amount in Numbers : {{ amountN }}</h4>
-                </div>
-            </div>
+           </table>
        </div>
    </div>
 {% endblock %}

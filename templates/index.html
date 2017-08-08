@@ -6,13 +6,17 @@
        <div class="container-fluid">
            <div class="w3-card-4">
               <img class="img-responsive" src="{{ url_for('static',filename = 'images/'+img)}}" alt="" />
-              <a class="btn btn-success btn-block" href='/predict'>Predict</a>
+              <a class="btn btn-success btn-block" href='/imageprocess'>Process the Image</a>
            </div>
        </div>
        {% else %}
         <div class="w3-card-4">
-       <span class="label label-danger">{{ message }}</span>
-        <div class="container-fluid">
+        {% if message is defined%}
+        <div class="alert alert-danger">
+             <strong>{{ message }}</strong>
+        </div>
+       {% endif %}
+        <div class="container-full">
           <h2>
               Giant volumes of Bank Check are widely used all over the world for the financial transactions,
               especially in developing countries like Nepal. Paper check is still used for non-cash transaction
@@ -27,5 +31,6 @@
    </div>
 
 {% endblock %}
+
 
 

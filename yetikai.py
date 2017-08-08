@@ -16,11 +16,10 @@ def horaw():
 
     cv2.imwrite(UPLOAD_FOLDERS+'thresholdImage.png', threshold)
 
-
-    kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (10,1))  # to manipulate the orientation of dilution , large x means horizonatally dilating  more, large y means vertically dilating more
+    kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (9,1))  # to manipulate the orientation of dilution , large x means horizonatally dilating  more, large y means vertically dilating more
     dilated = cv2.dilate(threshold, kernel, iterations=10)  # dilate , more the iteration more the dilation
 
-    cv2.imwrite(UPLOAD_FOLDERS+'dilatedImage.png', gray)
+    cv2.imwrite(UPLOAD_FOLDERS+'dilatedImage.png', dilated)
 
     _, contours, _ = cv2.findContours(dilated, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
 
@@ -35,6 +34,7 @@ def horaw():
         if (area  < 10000 or area == 0 ):
             continue
         cv2.rectangle(img1, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    cv2.imwrite(UPLOAD_FOLDERS+'BoundedImage.png', img1)
     # cv2.namedWindow('Display', cv2.WINDOW_NORMAL)
     # cv2.imshow('Display',img1)
     # cv2.waitKey(0)

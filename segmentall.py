@@ -36,7 +36,7 @@ def segment():
             ik = cv2.rectangle(img_final, (x, y), (x + w, y + h), (0, 255, 0), 2)
             cropped = image[y:y + h, x: x + w]
             cropped = cv2.resize(cropped, (32,32), interpolation=cv2.INTER_LINEAR)
-            #
+
             row, col = cropped.shape[:2]
             bottom = cropped[row - 2:row, 0:col]
             bordersize = 2

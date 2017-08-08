@@ -58,14 +58,20 @@ def upload():
     else:
         return redirect(request.url)
 
-@app.route('/predict')
-def predict():
+
+@app.route('/imageprocess')
+def imageprocess():
     print "I am here"
     edgedetect.detect()
     process1.proc()
     yetikai.horaw()
     preprocess.preprocess()
     segmentall.segment()
+    return render_template('results0.html')
+
+@app.route('/predict')
+def predict():
+    print 'I am here1'
     sabai = recognizechars.khojyo_yesle()
     name = sabai[0]
     date = sabai[1]
@@ -76,7 +82,7 @@ def predict():
 
 @app.errorhandler(Exception)
 def all_exception_handler(error):
-    return render_template('error.html')
+    return render_template('error1.html')
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.5',debug = True)
+    app.run(debug = True)

@@ -1,0 +1,49 @@
+{% extends 'layout2.html' %}
+{% block body %}
+   <div class="container-full">
+       <div class="row">
+           <div class="container-fluid">
+               <div class="w3-card-4">
+                   <h2 class="text-center">The processed Image is : </h2>
+                 <img class="img-responsive center-block" src="{{ url_for('static',filename = 'images/firstImage.png')}}" alt="" />
+               </div>
+           </div>
+       </div>
+       <br>
+       <hr>
+       <div class="row">
+           <div class="col-lg-6">
+               <div class="w3-card-4">
+                  <h3> 1. The Gray Image is :</h3>
+                 <img class="img-responsive" src="{{ url_for('static',filename = 'steps/grayImage.png')}}" alt="" />
+               </div>
+           </div>
+           <div class="col-lg-6">
+               <div class="w3-card-4">
+                   <h3>2. The Edged Image is :</h3>
+                 <img class="img-responsive" src="{{ url_for('static',filename = 'steps/edgedImage.png')}}" alt="" />
+               </div>
+           </div>
+       </div>
+       <br>
+       <hr>
+       <div class="row">
+           <div class="col-lg-6">
+               <div class="w3-card-4">
+                  <h3> 3. The Thresholded Image is :</h3>
+                 <img class="img-responsive" src="{{ url_for('static',filename = 'steps/thresholdImage.png')}}" alt="" />
+               </div>
+           </div>
+           <div class="col-lg-6">
+               <div class="w3-card-4">
+                  <h3> 4. The Dilated Image is :</h3>
+                 <img class="img-responsive" src="{{ url_for('static',filename = 'steps/dilatedImage.png')}}" alt="" />
+               </div>
+           </div>
+       </div>
+       <br>
+   </div>
+   <a class="btn btn-success btn-block" href='/predict'>Predict</a>
+{% endblock %}
+
+
